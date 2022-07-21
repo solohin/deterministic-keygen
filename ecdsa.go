@@ -1,4 +1,4 @@
-package deterministickeygen
+package keyconverter
 
 import (
 	"crypto/ecdsa"

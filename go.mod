@@ -1,4 +1,4 @@
-module github.com/solohin/deterministic-keygen
+module github.com/solohin/keyconverter
 
 go 1.18
 

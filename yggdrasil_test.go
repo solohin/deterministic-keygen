@@ -1,19 +1,19 @@
-package deterministickeygen_test
+package keyconverter_test
 
 import (
 	"testing"
 
-	deterministickeygen "github.com/solohin/deterministic-keygen"
+	"github.com/solohin/keyconverter"
 	"github.com/stretchr/testify/require"
 )
 
 func TestDeriveBestYggdrasilKeyFromEd25519(t *testing.T) {
-	ecdsaKey, err := deterministickeygen.DecodeEcdsaHex(SAMPLE_KEY_HEX)
+	ecdsaKey, err := keyconverter.DecodeEcdsaHex(SAMPLE_KEY_HEX)
 	require.NoError(t, err)
 
-	ed25519Key := deterministickeygen.CovertEcdsaToEd25519(ecdsaKey)
+	ed25519Key := keyconverter.CovertEcdsaToEd25519(ecdsaKey)
 
-	yggKeySet, err := deterministickeygen.DeriveBestYggdrasilKeyFromEd25519(ed25519Key)
+	yggKeySet, err := keyconverter.DeriveBestYggdrasilKeyFromEd25519(ed25519Key)
 	require.NoError(t, err)
 
 	ip := yggKeySet.GetIP()
